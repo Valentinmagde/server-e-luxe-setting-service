@@ -1,0 +1,40 @@
+{
+  "others": {
+    "routeNotFound": "Route not found"
+  },
+  "language": {
+    "languageNotFound": "Language does not exits.",
+    "invalidLanguageId": "Invalid language id."
+  },
+  "currency": {
+    "currencyNotFound": "Currency does not exits.",
+    "invalidCurrencyId": "Invalid currency id."
+  },
+  "notification": {
+    "notificationNotFound": "This notification does not exist.",
+    "invalidNotificationId": "Invalid notification id."
+  },
+  "setting": {
+    "settingNotFound": "This setting does not exist.",
+    "invalidSettingId": "Invalid setting id."
+  },
+  "config": {
+    "cache": {
+      "redis": {
+        "redisConnectionTo": "Redis connection to",
+        "failed": "failed"
+      }
+    }
+  },
+  "user": {
+    "unauthorize": {
+      "noToken": "No token",
+      "invalidToken": "Invalid token",
+      "invalidAdminToken": "Invalid admin token",
+      "invalidSellerToken": "Invalid seller token",
+      "invalidAdminOrSeller": "Invalid admin or seller token",
+      "invalidRefreshToken": "Invalid refresh token",
+      "noRefreshToken": "No refresh token"
+    }
+  }
+}

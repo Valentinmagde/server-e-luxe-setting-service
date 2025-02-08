@@ -1,0 +1,40 @@
+{
+  "others": {
+    "routeNotFound": "Itinéraire non trouvé"
+  },
+  "language": {
+    "languageNotFound": "Cette langue n'existe pas.",
+    "invalidLanguageId": "L'identifiant de cette langue n'est pas valide."
+  },
+  "currency": {
+    "currencyNotFound": "Cette devise n'existe pas.",
+    "invalidCurrencyId": "L'identifiant de cette devise n'est pas valide."
+  },
+  "notification": {
+    "notificationNotFound": "Cette notification n'existe pas.",
+    "invalidNotificationId": "L'identifiant de cette notification n'est pas valide."
+  },
+  "setting": {
+    "settingNotFound": "Ce réglage n'existe pas.",
+    "invalidSettingId": "Identifiant de paramètre invalide."
+  },
+  "config": {
+    "cache": {
+      "redis": {
+        "redisConnectionTo": "La connexion Redis à",
+        "failed": "a échoué"
+      }
+    }
+  },
+  "user": {
+    "unauthorize": {
+      "noToken": "Pas de jeton",
+      "invalidToken": "Jeton non valide",
+      "invalidAdminToken": "Jeton d'administration invalide",
+      "invalidSellerToken": "Jeton de vendeur invalide",
+      "invalidAdminOrSeller": "Jeton d'administrateur ou de vendeur invalide",
+      "invalidRefreshToken": "Jeton de rafraîchissement invalide",
+      "noRefreshToken": "Pas de jeton de rafraîchissement"
+    }
+  }
+}
