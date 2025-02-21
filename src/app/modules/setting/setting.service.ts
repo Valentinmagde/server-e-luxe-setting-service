@@ -421,6 +421,25 @@ class SettingService {
                   setting.home.daily_need_img_right,
                 "setting.home.button1_img": setting.home.button1_img,
                 "setting.home.button2_img": setting.home.button2_img,
+                "setting.home.service_one_status": setting.home.service_one_status,
+                "setting.home.service_two_status": setting.home.service_two_status,
+                "setting.home.service_three_status":
+                  setting.home.service_three_status,
+                "setting.home.service_four_status": setting.home.service_four_status,
+                "setting.home.service_one_image": setting.home.service_one_image,
+                "setting.home.service_two_image": setting.home.service_two_image,
+                "setting.home.service_three_image":
+                  setting.home.service_three_image,
+                "setting.home.service_four_image":
+                  setting.home.service_four_image,
+                "setting.home.service_one_title": setting.home.service_one_title,
+                "setting.home.service_two_title": setting.home.service_two_title,
+                "setting.home.service_three_title": setting.home.service_three_title,
+                "setting.home.service_four_title": setting.home.service_four_title,
+                "setting.home.service_one_description": setting.home.service_one_description,
+                "setting.home.service_two_description": setting.home.service_two_description,
+                "setting.home.service_three_description": setting.home.service_three_description,
+                "setting.home.service_four_description": setting.home.service_four_description,
 
                 //slider
                 "setting.slider.left_right_arrow":
