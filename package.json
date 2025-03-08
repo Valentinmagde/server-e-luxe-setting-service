@@ -1,5 +1,5 @@
 {
-  "name": "translator-service",
+  "name": "settings-service",
   "version": "1.0.0",
   "description": "This is a translation service for African languages.",
   "main": "server.ts",

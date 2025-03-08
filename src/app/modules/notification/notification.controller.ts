@@ -28,6 +28,60 @@ class NotificationController {
   }
 
   /**
+   * Get notification details handler
+   *
+   * @author Valentin Magde <valentinmagde@gmail.com>
+   * @since 2025-07-08
+   *
+   * @param {Request} req the http request
+   * @param {Response} res the http response
+   *
+   * @return {Promise<void>} the eventual completion or failure
+   */
+  public async show(req: Request, res: Response): Promise<void> {
+    const notificationId = req.params.notificationId;
+    if (checkObjectId(notificationId)) {
+      notificationService
+        .show(notificationId)
+        .then((result) => {
+          if (result === null || result === undefined) {
+            const response = {
+              status: statusCode.httpNotFound,
+              errNo: errorNumbers.resourceNotFound,
+              errMsg: i18n.__("notification.notificationNotFound"),
+            };
+
+            return customResponse.error(response, res);
+          } else {
+            const response = {
+              status: statusCode.httpOk,
+              data: result,
+            };
+
+            return customResponse.success(response, res);
+          }
+        })
+        .catch((error) => {
+          const response = {
+            status: error?.status || statusCode.httpInternalServerError,
+            errNo: errorNumbers.genericError,
+            errMsg: error?.message || error,
+          };
+
+          return customResponse.error(response, res);
+        });
+    } else {
+      const response = {
+        status: statusCode.httpBadRequest,
+        errNo: errorNumbers.ivalidResource,
+        errMsg: i18n.__("notification.invalidNotificationId"),
+      };
+
+      return customResponse.error(response, res);
+    }
+  }
+
+  /**
    * Get all notification details handler
    *
    * @author Valentin Magde <valentinmagde@gmail.com>

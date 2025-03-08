@@ -63,6 +63,7 @@ class NotificationSubscribe {
         order_id: data.message.order_id,
         message: data.message.message,
         user_id: data.message.user_id,
+        type: data.message.type,
       } as any);
     } catch (error) {
       console.error("Error handling create order notification:", error);

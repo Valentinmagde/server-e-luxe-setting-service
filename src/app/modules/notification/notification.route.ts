@@ -324,7 +324,8 @@ class NotificationRoutes {
              *        schema:
              *          type: string
              *        required: true
-             *        description: The notification IDs to be deleted. You can enter several identifiers, separated by commas
+             *        description: The notification IDs to be deleted.
+             *          You can enter several identifiers, separated by commas
              *
              *     responses:
              *       204:
@@ -368,6 +369,78 @@ class NotificationRoutes {
         router.use(
           "/notification",
           routesGrouping.group((router) => {
+            /**
+             * @swagger
+             * /v1/{lang}/notification/{notificationId}:
+             *   get:
+             *     security:
+             *      - bearerAuth: []
+             *     tags:
+             *     - Notification
+             *     operationId: show
+             *     summary: Get a notification by ID.
+             *     description: Get a notification by id from the system.
+             *     parameters:
+             *      - in: path
+             *        name: lang
+             *        schema:
+             *          type: string
+             *          example: en
+             *        required: true
+             *        description: Language for the response. Supported
+             *          languages ['en', 'fr']
+             *      - in: path
+             *        name: notificationId
+             *        schema:
+             *          type: string
+             *        required: true
+             *        description: String ID of the notification to get
+             *
+             *     responses:
+             *       200:
+             *         description: The notification has successfully logged in.
+             *         content:
+             *           application/json:
+             *             schema:
+             *                type: object
+             *                properties:
+             *                  status:
+             *                    type: string
+             *                    example: Ok
+             *                  data:
+             *                    $ref: '#/components/schemas/Notification'
+             *
+             *       '400':
+             *         description: Bad Request.
+             *         content:
+             *          application/json:
+             *             schema:
+             *              $ref: '#/responses/schemas/400'
+             *
+             *       '401':
+             *         description: Unauthorized.
+             *         content:
+             *          application/json:
+             *             schema:
+             *              $ref: '#/responses/schemas/401'
+             *
+             *       '404':
+             *         description: Not Found.
+             *         content:
+             *          application/json:
+             *             schema:
+             *              $ref: '#/responses/schemas/404'
+             *
+             *       '500':
+             *         description: Internal Server Error.
+             *         content:
+             *          application/json:
+             *             schema:
+             *              $ref: '#/responses/schemas/500'
+             *
+             */
+            router.get("/:notificationId", notificationController.show);
+
             /**
              * @swagger
              * /v1/{lang}/notification/{notificationId}/status:

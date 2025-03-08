@@ -9,6 +9,29 @@ import NotificationType from "./notification.type";
  */
 class NotificationService {
   /**
+   * Get notification details
+   *
+   * @author Valentin Magde <valentinmagde@gmail.com>
+   * @since 2025-03-07
+   *
+   * @param {string} notificationId the notification id
+   * @return {Promise<unknown>} the eventual completion or failure
+   */
+  public show(notificationId: string): Promise<unknown> {
+    return new Promise((resolve, reject) => {
+      (async () => {
+        try {
+          const notification = await Notification.findById(notificationId);
+
+          resolve(notification);
+        } catch (error) {
+          reject(error);
+        }
+      })();
+    });
+  }
+
+  /**
    * Get all notification details
    *
    * @author Valentin Magde <valentinmagde@gmail.com>
