@@ -219,9 +219,9 @@ class NotificationController {
     const emailHtml = loadTemplate("contact-notification-template.html", emailData);
 
     await rabbitmqManager.publishMessage("eluxe.email.sendMail", "sendMail", {
-      senderName: body.name,
+      senderName: body.appName,
       receivers: body.receivers || [],
-      senderEmail: body.email || "",
+      senderEmail: body.sender || "",
       subject: body.subject,
       body: emailHtml,
     });
