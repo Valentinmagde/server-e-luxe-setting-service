@@ -160,6 +160,7 @@ class NotificationController {
 
                   return customResponse.error(response, res);
                 } else {
+                  console.log(body);
                   if(body.type === "contact") {
                     this.sendContactEmail(body);
                   }
@@ -206,6 +207,7 @@ class NotificationController {
    * @return {Promise<void>} the eventual completion or failure
    */
   private async sendContactEmail(body: any): Promise<void> {
+    console.log(body);
     const emailData = {
       name: body.name || "",
       email: body.email || "",
@@ -218,12 +220,15 @@ class NotificationController {
 
     const emailHtml = loadTemplate("contact-notification-template.html", emailData);
 
+    console.log("Publish message to rabbitmq",emailHtml);
     await rabbitmqManager.publishMessage("eluxe.email.sendMail", "sendMail", {
       senderName: body.appName,
       receivers: body.receivers || [],
       senderEmail: body.sender || "",
       subject: body.subject,
       body: emailHtml,
+    }).catch((error) => {
+      console.log(error);
     });
   }
 
