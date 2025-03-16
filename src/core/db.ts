@@ -46,8 +46,7 @@ class DBManager {
       mongoose
         .connect(
           `mongodb://${config.mongoDbUser}:${config.mongoDbPassword}@${config.mongoDbHost}:${
-            config.mongoDbPort
-          }/${config.mongoDbName}`
+          config.mongoDbPort}/${config.mongoDbName}?authSource=admin`
         )
         .then(() => {
           next();
@@ -77,17 +76,16 @@ class DBManager {
       (async () => {
         try {
           mongoose
-          .connect(
-            `mongodb://${config.mongoDbUser}:${config.mongoDbPassword}@${config.mongoDbHost}:${
-              config.mongoDbPort
-            }/${config.mongoDbName}`
-          )
-          .then((dBConnection) => {
-            resolve(dBConnection);
-          })
-          .catch((error) => {
-            reject(error);
-          });
+            .connect(
+              `mongodb://${config.mongoDbUser}:${config.mongoDbPassword}@${config.mongoDbHost}:${
+              config.mongoDbPort}/${config.mongoDbName}?authSource=admin`
+            )
+            .then((dBConnection) => {
+              resolve(dBConnection);
+            })
+            .catch((error) => {
+              reject(error);
+            });
         } catch (error) {
           reject(error);
         }
