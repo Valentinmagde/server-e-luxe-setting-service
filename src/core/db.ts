@@ -45,7 +45,7 @@ class DBManager {
     else {
       mongoose
         .connect(
-          `mongodb://${config.mongoDbHost}:${
+          `mongodb://${config.mongoDbUser}:${config.mongoDbPassword}@${config.mongoDbHost}:${
             config.mongoDbPort
           }/${config.mongoDbName}`
         )
@@ -78,7 +78,7 @@ class DBManager {
         try {
           mongoose
           .connect(
-            `mongodb://${config.mongoDbHost}:${
+            `mongodb://${config.mongoDbUser}:${config.mongoDbPassword}@${config.mongoDbHost}:${
               config.mongoDbPort
             }/${config.mongoDbName}`
           )
