@@ -5,6 +5,7 @@ import cors from "cors";
 import ExpressConfigModule from "./express";
 import { Application } from "express";
 import DBManager from "./db";
+import config from "../config";
 
 /**
  * @author Valentin Magde <valentinmagde@gmail.com>
@@ -69,6 +70,8 @@ class AppConfig {
   public loadExpressConfig(): void {
     new ExpressConfigModule(this.app).setAppEngine();
     // new Authorization(this.app).setJWTConfig();
+    console.log( `mongodb://${config.mongoDbUser}:${config.mongoDbPassword}@${config.mongoDbHost}:${
+      config.mongoDbPort}/${config.mongoDbName}?authSource=admin`);
     new DBManager(this.app).setDBConnection();
   }
 }

@@ -27,8 +27,8 @@ const dev = {
   // Mongo db
   mongoDbHost: process.env.MONGODB_DB_HOST || "127.0.0.1",
   mongoDbPort: process.env.MONGODB_DB_PORT || "27017",
-  mongoDbUser: process.env.MONGODB_DB_USER || "valentin",
-  mongoDbPassword: process.env.MONGODB_DB_PASSWORD || "password",
+  mongoDbUser: process.env.MONGODB_DB_USER || "e_luxe",
+  mongoDbPassword: process.env.MONGODB_DB_PASSWORD || "e_luxe2024!",
   mongoDbName: process.env.MONGODB_DB_NAME || "el_settings_db",
 
   // Rabbitmq db
