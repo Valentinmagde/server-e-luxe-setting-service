@@ -1,3 +1,4 @@
+import { socket } from "../../../core/socket";
 import Notification from "./notification.model";
 import NotificationType from "./notification.type";
 
@@ -92,11 +93,19 @@ class NotificationService {
             } else {
               const newNotification = new Notification(data);
               const notification = await newNotification.save();
+
+              // Émettre la notification en temps réel via WebSocket
+              socket.emit('notification', notification);
+
               resolve(notification);
             }
           } else {
             const newNotification = new Notification(data);
             const notification = await newNotification.save();
+
+            // Émettre la notification en temps réel via WebSocket
+            socket.emit('notification', notification);
+
             resolve(notification);
           }
         } catch (error) {

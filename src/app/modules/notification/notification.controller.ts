@@ -160,7 +160,6 @@ class NotificationController {
 
                   return customResponse.error(response, res);
                 } else {
-                  console.log(body);
                   if(body.type === "contact") {
                     this.sendContactEmail(body);
                   }
