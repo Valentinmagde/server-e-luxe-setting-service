@@ -448,34 +448,83 @@ class SettingService {
                 "setting.slider.both_slider": setting.slider.both_slider,
                 "setting.slider.first_img": setting.slider.first_img,
                 "setting.slider.first_title": setting.slider.first_title,
+                "setting.slider.first_title_color":
+                  setting.slider.first_title_color,
+                "setting.slider.first_description_color_one":
+                  setting.slider.first_description_color_one,
+                "setting.slider.first_description_color_two":
+                  setting.slider.first_description_color_two,
                 "setting.slider.first_description":
                   setting.slider.first_description,
                 "setting.slider.first_button": setting.slider.first_button,
                 "setting.slider.first_link": setting.slider.first_link,
+                "setting.slider.first_status": setting.slider.first_status,
                 "setting.slider.second_img": setting.slider.second_img,
                 "setting.slider.second_title": setting.slider.second_title,
+                "setting.slider.second_title_color":
+                  setting.slider.second_title_color,
+                "setting.slider.second_description_color_one":
+                  setting.slider.second_description_color_one,
+                "setting.slider.second_description_color_two":
+                  setting.slider.second_description_color_two,
                 "setting.slider.second_description":
                   setting.slider.second_description,
                 "setting.slider.second_button": setting.slider.second_button,
                 "setting.slider.second_link": setting.slider.second_link,
+                "setting.slider.second_status": setting.slider.second_status,
                 "setting.slider.third_img": setting.slider.third_img,
                 "setting.slider.third_title": setting.slider.third_title,
+                "setting.slider.third_title_color":
+                  setting.slider.third_title_color,
+                "setting.slider.third_description_color_one":
+                  setting.slider.third_description_color_one,
+                "setting.slider.third_description_color_two":
+                  setting.slider.third_description_color_two,
                 "setting.slider.third_description":
                   setting.slider.third_description,
                 "setting.slider.third_button": setting.slider.third_button,
                 "setting.slider.third_link": setting.slider.third_link,
+                "setting.slider.third_status": setting.slider.third_status,
                 "setting.slider.four_img": setting.slider.four_img,
                 "setting.slider.four_title": setting.slider.four_title,
+                "setting.slider.four_title_color":
+                  setting.slider.four_title_color,
+                "setting.slider.four_description_color_one":
+                  setting.slider.four_description_color_one,
+                "setting.slider.four_description_color_two":
+                  setting.slider.four_description_color_two,
                 "setting.slider.four_description":
                   setting.slider.four_description,
                 "setting.slider.four_button": setting.slider.four_button,
                 "setting.slider.four_link": setting.slider.four_link,
+                "setting.slider.four_status": setting.slider.four_status,
                 "setting.slider.five_img": setting.slider.five_img,
                 "setting.slider.five_title": setting.slider.five_title,
+                "setting.slider.five_title_color":
+                  setting.slider.five_title_color,
+                "setting.slider.five_description_color_one":
+                  setting.slider.five_description_color_one,
+                "setting.slider.five_description_color_two":
+                  setting.slider.five_description_color_two,
                 "setting.slider.five_description":
                   setting.slider.five_description,
                 "setting.slider.five_button": setting.slider.five_button,
                 "setting.slider.five_link": setting.slider.five_link,
+                "setting.slider.five_status": setting.slider.five_status,
+                "setting.slider.banner_one_title": setting.slider.banner_one_title,
+                "setting.slider.banner_one_title_color": setting.slider.banner_one_title_color,
+                "setting.slider.banner_one_description": setting.slider.banner_one_description,
+                "setting.slider.banner_one_description_color": setting.slider.banner_one_description_color,
+                "setting.slider.banner_one_status": setting.slider.banner_one_status,
+                "setting.slider.banner_one_image": setting.slider.banner_one_image,
+                "setting.slider.banner_one_link": setting.slider.banner_one_link,
+                "setting.slider.banner_two_title": setting.slider.banner_two_title,
+                "setting.slider.banner_two_title_color": setting.slider.banner_two_title_color,
+                "setting.slider.banner_two_description": setting.slider.banner_two_description,
+                "setting.slider.banner_two_description_color": setting.slider.banner_two_description_color,
+                "setting.slider.banner_two_status": setting.slider.banner_two_status,
+                "setting.slider.banner_two_image": setting.slider.banner_two_image,
+                "setting.slider.banner_two_link": setting.slider.banner_two_link,
 
                 //checkout
                 "setting.checkout.personal_details":
