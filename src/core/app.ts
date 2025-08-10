@@ -56,7 +56,14 @@ class AppConfig {
   public loadAppLevelConfig(): void {
     this.app.use(bodyParser.json({ limit: '50mb' }));
     this.app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
-    this.app.use(cors());
+    this.app.use(cors({
+      origin: [
+        config.webClientUrl,
+        config.webBackofficeUrl,
+        config.apiGatewayUrl,
+      ],
+      credentials: true
+    }));
   }
 
   /**
