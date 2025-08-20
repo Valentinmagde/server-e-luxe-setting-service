@@ -2,12 +2,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const dev = {
+const local = {
   // Environment
   env: process.env.NODE_ENV || "local",
 
   // Server config
-  nodeServerPort: process.env.NODE_SERVER_PORT || 2900,
+  nodeServerPort: process.env.NODE_SERVER_PORT || 4007,
   nodeServerHost: process.env.NODE_SERVER_HOST || "localhost",
   nodeServerPublicKey: process.env.NODE_SERVER_PUBLIC_KEY?.replace(
     /\\n/g,
@@ -15,9 +15,9 @@ const dev = {
   ),
 
   // API GATEWAY URL
-  apiGatewayUrl: process.env.API_GATEWAY_URL || "http://localhost:2000",
-  webClientUrl: process.env.WEB_CLIENT_URL || "http://localhost:7000",
-  webBackofficeUrl: process.env.WEB_BACKOFFICE_URL || "http://localhost:5000",
+  apiGatewayUrl: process.env.API_GATEWAY_URL || "http://localhost:4000",
+  webClientUrl: process.env.WEB_CLIENT_URL || "http://localhost:7001",
+  webBackofficeUrl: process.env.WEB_BACKOFFICE_URL || "http://localhost:5001",
 
   // Redis db
   redisDbPort: process.env.REDIS_DB_PORT || 6379,
@@ -36,8 +36,8 @@ const dev = {
   // Rabbitmq db
   rabbitmqDbHost: process.env.RABBITMQ_DB_HOST || "127.0.0.1",
   rabbitmqDbPort: process.env.RABBITMQ_DB_PORT || "15672",
-  rabbitmqDbUser: process.env.RABBITMQ_DB_USER || "valentin",
-  rabbitmqDbPassword: process.env.RABBITMQ_DB_PASSWORD || "password",
+  rabbitmqDbUser: process.env.RABBITMQ_DB_USER || "e_luxe",
+  rabbitmqDbPassword: process.env.RABBITMQ_DB_PASSWORD || "e_luxe2024!",
   rabbitmqDbName: process.env.RABBITMQ_DB_NAME || "el_settings_db",
 
   // Mail config
@@ -53,4 +53,4 @@ const dev = {
   swaggerBaseUrl: process.env.SWAGGER_BASE_URL || "/v1/settings/docs",
 };
 
-export default dev;
+export default local;
