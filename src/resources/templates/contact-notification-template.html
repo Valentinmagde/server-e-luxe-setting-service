@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,55 +10,7 @@
       color: #333333;
       margin: 0;
       padding: 0;
-      line-height: 1.4;
-    }
-
-    h1 {
-      color: #333333;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 24px;
-    }
-
-    p {
-      font-size: 14px;
-      margin: 8px 0;
-      color: #333333;
-    }
-
-    a {
-      color: #1a82e2;
-    }
-
-    .button {
-      display: inline-block;
-      background-color: #D4AF37;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 12px 24px;
-      font-size: 14px;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-
-    .button:hover {
-      background-color: #C6A020;
-    }
-
-    .body-action {
-      margin: 15px 0;
-      text-align: center;
-    }
-
-    .body-sub {
-      margin-top: 32px;
-      border-top: 1px solid #efefef;
-      font-size: 14px;
-      color: #555555;
-    }
-
-    .body-sub p {
-      font-size: 12px;
+      line-height: 1.5;
     }
 
     table {
@@ -67,10 +18,81 @@
       border-spacing: 0;
       margin: 0 auto;
       max-width: 600px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    td {
-      padding: 5px 0;
+    .header {
+      background-color: #ca8a04;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: #333333;
+    }
+
+    p {
+      font-size: 14px;
+      margin: 6px 0;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+
+    .info-table td {
+      padding: 8px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+    }
+
+    .info-table td:first-child {
+      font-weight: bold;
+      color: #555555;
+      width: 30%;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #ca8a04;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .button:hover {
+      background-color: #C6A020;
+    }
+
+    .footer {
+      padding: 15px 20px;
+      font-size: 12px;
+      color: #777777;
+      text-align: center;
+      border-top: 1px solid #efefef;
     }
 
     @media (max-width: 600px) {
@@ -85,51 +107,51 @@
 
 <body>
   <table>
+    <!-- Header -->
     <tr>
-      <td>
-        <h1>New Contact Message from {{name}}</h1>
-        <p><strong>Email:</strong> {{email}}</p>
-        <p><strong>Phone:</strong> {{phone}}</p>
-        <p><strong>Subject:</strong> {{subject}}</p>
-        <p><strong>Message:</strong></p>
-        <p>"{{message}}"</p>
+      <td class="header">
+        <h1>New Contact Request – e-luxe.fr</h1>
+      </td>
+    </tr>
 
-        <!-- Action -->
-        <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+    <!-- Content -->
+    <tr>
+      <td class="content">
+        <h2>You have received a new inquiry from {{name}}</h2>
+
+        <table class="info-table">
           <tr>
-            <td align="center">
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                  <td align="center">
-                    <table border="0" cellspacing="0" cellpadding="0">
-                      <tr>
-                        <td>
-                          <a href="mailto:{{email}}" class="button" target="_blank" style="color: #ffffff;">Reply to {{name}}</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
+            <td>Email</td>
+            <td>{{email}}</td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td>{{phone}}</td>
+          </tr>
+          <tr>
+            <td>Subject</td>
+            <td>{{subject}}</td>
+          </tr>
+          <tr>
+            <td>Message</td>
+            <td>"{{message}}"</td>
           </tr>
         </table>
 
-        <p>If you have any questions, please <a href="{{support_url}}">contact support</a>.</p>
-        <p>Thanks, <br>The {{product_name}} Team</p>
+        <div style="text-align: center;">
+          <a href="mailto:{{email}}" class="button">Reply to {{name}}</a>
+        </div>
+      </td>
+    </tr>
 
-        <!-- Sub copy -->
-        <table class="body-sub">
-          <tr>
-            <td>
-              <p class="sub">If you’re having trouble clicking the button above, copy and paste the email below into your email client.</p>
-              <p class="sub">{{email}}</p>
-            </td>
-          </tr>
-        </table>
+    <!-- Footer -->
+    <tr>
+      <td class="footer">
+        This email was automatically generated from the contact form on 
+        <strong>e-luxe.fr</strong>.<br>
+        Please reply directly to the client if necessary.
       </td>
     </tr>
   </table>
 </body>
-
 </html>

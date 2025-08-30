@@ -43,7 +43,7 @@ class NodeMailerManager {
    */
   public sendMail({
     senderName = "E-LUXE",
-    senderEmail = "contact@e-luxe.fr",
+    senderEmail = "support@e-luxe.fr",
     receivers = "",
     subject = "",
     body = ""
