@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Your Customization Request Confirmation</title>
+</head>
+
+<body style="margin:0;padding:0;background-color:#f8f9fa;font-family:Arial,Helvetica,sans-serif;color:#333;">
+
+  <!-- WRAPPER -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f8f9fa;padding:20px 0;">
+    <tr>
+      <td align="center">
+
+        <!-- CONTAINER -->
+        <table width="600" cellpadding="0" cellspacing="0"
+          style="background:#ffffff;border-radius:10px;overflow:hidden;">
+
+          <!-- HEADER -->
+          <tr>
+            <td align="center" style="background:#ca8a04;color:#ffffff;padding:30px 20px;">
+              <h1 style="margin:0;font-size:24px;font-weight:600;">
+                Your Customization Request Has Been Received!
+              </h1>
+              <div style="margin-top:10px;display:inline-block;background:#faf6e9;
+              color:#ca8a04;padding:6px 15px;border-radius:20px;font-size:14px;font-weight:500;">
+                Reference: #{{request_id}}
+              </div>
+            </td>
+          </tr>
+
+          <!-- CONTENT -->
+          <tr>
+            <td style="padding:30px;">
+
+              <p>Hello <strong>{{client_name}}</strong>,</p>
+
+              <p>
+                Thank you for your customization request. Our expert team will now review your project carefully.
+              </p>
+
+              <!-- SUMMARY TITLE -->
+              <table width="100%" cellpadding="0" cellspacing="0"
+                style="background:#faf6e9;border-left:4px solid #ca8a04;margin:20px 0;">
+                <tr>
+                  <td style="padding:15px;">
+                    <strong>Request Summary:</strong>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- INFO TABLE -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;border-collapse:collapse;">
+                <tr>
+                  <td style="padding:10px 12px;border-bottom:1px solid #eee;font-weight:bold;width:35%;">Reference</td>
+                  <td style="padding:10px 12px;border-bottom:1px solid #eee;">#{{request_id}}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border-bottom:1px solid #eee;font-weight:bold;">Product</td>
+                  <td style="padding:10px 12px;border-bottom:1px solid #eee;">{{product_name}} ({{product_sku}})</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border-bottom:1px solid #eee;font-weight:bold;">Details Provided</td>
+                  <td style="padding:10px 12px;border-bottom:1px solid #eee;">{{customization_details}}</td>
+                </tr>
+
+                {{#if files_count}}
+                <tr>
+                  <td style="padding:10px 12px;border-bottom:1px solid #eee;font-weight:bold;">Attached Files</td>
+                  <td style="padding:10px 12px;border-bottom:1px solid #eee;">
+                    <div style="background:#f8f9fa;padding:10px;border-radius:6px;font-size:13px;">
+                      {{files_count}} file(s) received
+                    </div>
+                  </td>
+                </tr>
+                {{/if}}
+
+                <tr>
+                  <td style="padding:10px 12px;font-weight:bold;">Request Date</td>
+                  <td style="padding:10px 12px;">{{submission_date}}</td>
+                </tr>
+              </table>
+
+              <!-- NEXT STEPS TITLE -->
+              <table width="100%" cellpadding="0" cellspacing="0"
+                style="background:#faf6e9;border-left:4px solid #ca8a04;margin:25px 0;">
+                <tr>
+                  <td style="padding:15px;">
+                    <strong>What Happens Next:</strong>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- STEPS -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:20px;">
+                <tr>
+
+                  <!-- STEP 1 -->
+                  <td width="33%" style="padding:7px;">
+                    <table width="100%" cellpadding="0" cellspacing="0"
+                      style="border:1px solid #eaeaea;background:#f9f9f9;border-radius:8px;">
+                      <tr>
+                        <td align="center" style="padding:15px;">
+                          <div style="width:30px;height:30px;background:#ca8a04;color:#ffffff;
+                          border-radius:50%;line-height:30px;font-weight:bold;margin:0 auto 10px;">1</div>
+                          <strong>Technical Review</strong><br>
+                          <span style="font-size:12px;color:#666;">24–48 hours max</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <!-- STEP 2 -->
+                  <td width="33%" style="padding:7px;">
+                    <table width="100%" cellpadding="0" cellspacing="0"
+                      style="border:1px solid #eaeaea;background:#f9f9f9;border-radius:8px;">
+                      <tr>
+                        <td align="center" style="padding:15px;">
+                          <div style="width:30px;height:30px;background:#ca8a04;color:#ffffff;
+                          border-radius:50%;line-height:30px;font-weight:bold;margin:0 auto 10px;">2</div>
+                          <strong>Quote & Mock-up</strong><br>
+                          <span style="font-size:12px;color:#666;">Sent by email</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <!-- STEP 3 -->
+                  <td width="33%" style="padding:7px;">
+                    <table width="100%" cellpadding="0" cellspacing="0"
+                      style="border:1px solid #eaeaea;background:#f9f9f9;border-radius:8px;">
+                      <tr>
+                        <td align="center" style="padding:15px;">
+                          <div style="width:30px;height:30px;background:#ca8a04;color:#ffffff;
+                          border-radius:50%;line-height:30px;font-weight:bold;margin:0 auto 10px;">3</div>
+                          <strong>Approval</strong><br>
+                          <span style="font-size:12px;color:#666;">Then production</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+
+              <p><strong>You will be contacted within 24–48 business hours</strong> to provide:</p>
+              <ul style="padding-left:18px;">
+                <li>Technical feasibility confirmation</li>
+                <li>Visual mock-up if needed</li>
+                <li>Detailed quote</li>
+                <li>Estimated production time</li>
+              </ul>
+
+              <!-- CTA -->
+              <div style="text-align:center;margin:30px 0;">
+                <a href="{{faq_link}}" style="display:inline-block;background:#ca8a04;
+                color:#ffffff;text-decoration:none;padding:14px 30px;border-radius:6px;
+                font-weight:600;font-size:15px;">
+                  View Our Customization FAQ
+                </a>
+              </div>
+
+              <p>
+                <strong>Need to modify your request?</strong><br>
+                Simply reply to this email quoting reference <code>#{{request_id}}</code>.
+              </p>
+
+              <p>
+                Best regards,<br>
+                <strong>The Customization Team – {{company_name}}</strong>
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td align="center"
+              style="padding:20px;font-size:12px;color:#777;background:#fafafa;border-top:1px solid #eee;">
+              This email was automatically generated from your request on
+              <strong>{{website_url}}</strong><br>
+              Contact us at {{company_phone}} or reply to this email.<br>
+              © {{current_year}} {{company_name}}. All rights reserved.
+            </td>
+          </tr>
+
+        </table>
+        <!-- /CONTAINER -->
+
+      </td>
+    </tr>
+  </table>
+  <!-- /WRAPPER -->
+
+</body>
+
+</html>

@@ -84,22 +84,22 @@ class NotificationService {
     return new Promise((resolve, reject) => {
       (async () => {
         try {
-          if (data.product_id) {
-            const isAdded = await Notification.findOne({
-              product_id: data.product_id,
-            });
-            if (isAdded) {
-              resolve("ISADDED");
-            } else {
-              const newNotification = new Notification(data);
-              const notification = await newNotification.save();
+          // if (data.product_id) {
+          //   const isAdded = await Notification.findOne({
+          //     product_id: data.product_id,
+          //   });
+          //   if (isAdded) {
+          //     resolve("ISADDED");
+          //   } else {
+          //     const newNotification = new Notification(data);
+          //     const notification = await newNotification.save();
 
-              // Émettre la notification en temps réel via WebSocket
-              socket.emit('notification', notification);
+          //     // Émettre la notification en temps réel via WebSocket
+          //     socket.emit('notification', notification);
 
-              resolve(notification);
-            }
-          } else {
+          //     resolve(notification);
+          //   }
+          // } else {
             const newNotification = new Notification(data);
             const notification = await newNotification.save();
 
@@ -107,7 +107,7 @@ class NotificationService {
             socket.emit('notification', notification);
 
             resolve(notification);
-          }
+          // }
         } catch (error) {
           reject(error);
         }

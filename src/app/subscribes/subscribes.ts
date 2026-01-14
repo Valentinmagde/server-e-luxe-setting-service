@@ -19,6 +19,7 @@ class Subscribes {
   public appSubscribes(): void {
     // Includes all subscribes
     notificationSubscribe.createOrderNotification();
+    notificationSubscribe.createProductCustomizationNotification();
   }
 
   /**
