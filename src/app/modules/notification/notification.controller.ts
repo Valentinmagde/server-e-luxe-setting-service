@@ -147,11 +147,12 @@ class NotificationController {
             return customResponse.error(response, res);
           } else {
             const body = req.body;
+            console.log("body", body);
 
             notificationService
               .store(body)
               .then((result) => {
-                if(result === "ISADDED") {
+                if (result === "ISADDED") {
                   const response = {
                     status: statusCode.httpConflict,
                     errNo: errorNumbers.resourceAlreadyExists,
@@ -160,7 +161,7 @@ class NotificationController {
 
                   return customResponse.error(response, res);
                 } else {
-                  if(body.type === "contact") {
+                  if (body.type === "contact") {
                     this.sendContactEmail(body);
                   }
 
@@ -193,42 +194,6 @@ class NotificationController {
 
         return customResponse.error(response, res);
       });
-  }
-
-  /**
-   * Send contact notification route handler
-   *
-   * @author Valentin Magde <valentinmagde@gmail.com>
-   * @since 2025-02-04
-   *
-   * @param {any} body the email data.
-   *
-   * @return {Promise<void>} the eventual completion or failure
-   */
-  private async sendContactEmail(body: any): Promise<void> {
-    console.log(body);
-    const emailData = {
-      name: body.name || "",
-      email: body.email || "",
-      phone: body.phone || "",
-      subject: body.subject || "",
-      message: body.message || "",
-      product_name: body?.appName || "",
-      support_url: body.supportUrl || "#",
-    };
-
-    const emailHtml = loadTemplate("contact-notification-template.html", emailData);
-
-    console.log("Publish message to rabbitmq",emailHtml);
-    await rabbitmqManager.publishMessage("eluxe.email.sendMail", "sendMail", {
-      senderName: body.appName,
-      receivers: body.receivers || [],
-      senderEmail: body.sender || "",
-      subject: body.subject,
-      body: emailHtml,
-    }).catch((error) => {
-      console.log(error);
-    });
   }
 
   /**
@@ -502,6 +467,47 @@ class NotificationController {
         };
 
         return customResponse.error(response, res);
+      });
+  }
+
+  /**
+   * Send contact notification route handler
+   *
+   * @author Valentin Magde <valentinmagde@gmail.com>
+   * @since 2025-02-04
+   *
+   * @param {any} body the email data.
+   *
+   * @return {Promise<void>} the eventual completion or failure
+   */
+  private async sendContactEmail(body: any): Promise<void> {
+    console.log(body);
+    const emailData = {
+      name: body.name || "",
+      email: body.email || "",
+      phone: body.phone || "",
+      subject: body.subject || "",
+      message: body.message || "",
+      product_name: body?.appName || "",
+      support_url: body.supportUrl || "#",
+    };
+
+    const emailHtml = loadTemplate(
+      "contact-notification-template.html",
+      emailData
+    );
+
+    console.log("Publish message to rabbitmq", emailHtml);
+    await rabbitmqManager
+      .publishMessage("eluxe.email.sendMail", "sendMail", {
+        senderName: body.appName,
+        receivers: body.receivers || [],
+        senderEmail: body.sender || "",
+        subject: body.subject,
+        body: emailHtml,
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }
 }
